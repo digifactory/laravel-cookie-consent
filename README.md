@@ -1,11 +1,13 @@
-# Very short description of the package
+# Laravel Cookie Consent
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/digifactory/laravel-cookie-consent.svg?style=flat-square)](https://packagist.org/packages/digifactory/laravel-cookie-consent)
+[![MIT Licensed](https://img.shields.io/github/license/digifactory/laravel-cookie-consent?style=flat-square)](LICENSE.md)
 [![Build Status](https://img.shields.io/travis/digifactory/laravel-cookie-consent/master.svg?style=flat-square)](https://travis-ci.org/digifactory/laravel-cookie-consent)
 [![Quality Score](https://img.shields.io/scrutinizer/g/digifactory/laravel-cookie-consent.svg?style=flat-square)](https://scrutinizer-ci.com/g/digifactory/laravel-cookie-consent)
+[![StyleCI](https://styleci.io/repos/217690645/shield?branch=master)](https://styleci.io/repos/217690645)
 [![Total Downloads](https://img.shields.io/packagist/dt/digifactory/laravel-cookie-consent.svg?style=flat-square)](https://packagist.org/packages/digifactory/laravel-cookie-consent)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+This package makes dealing with cookie consent in your Blade views a piece of cake. By default the package uses [CookieBot](https://manage.cookiebot.com/goto/signup?rid=R4INC) as its 'consent provider'.
 
 ## Installation
 
@@ -18,7 +20,9 @@ composer require digifactory/laravel-cookie-consent
 ## Usage
 
 ``` php
-// Usage description here
+@cookieConsentNecessary
+User has given consent for necessary cookies!
+@endcookieConsentNecessary
 ```
 
 ### Testing
