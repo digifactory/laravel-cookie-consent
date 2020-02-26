@@ -2,7 +2,6 @@
 
 namespace DigiFactory\CookieConsent\Facades;
 
-use DigiFactory\CookieConsent\Contracts\ConsentProvider;
 use Illuminate\Support\Facades\Facade;
 
 /**
