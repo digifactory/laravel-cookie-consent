@@ -2,8 +2,8 @@
 
 namespace DigiFactory\CookieConsent\Tests;
 
-use Orchestra\Testbench\TestCase;
 use DigiFactory\CookieConsent\CookieConsentServiceProvider;
+use Orchestra\Testbench\TestCase;
 
 class ExampleTest extends TestCase
 {
@@ -11,7 +11,7 @@ class ExampleTest extends TestCase
     {
         return [CookieConsentServiceProvider::class];
     }
-    
+
     /** @test */
     public function true_is_true()
     {

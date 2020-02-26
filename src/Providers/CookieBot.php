@@ -32,9 +32,9 @@ class CookieBot implements ConsentProvider
     {
         // Most of this code is taken from: https://www.cookiebot.com/en/developer/
 
-        if (isset($_COOKIE["CookieConsent"])) {
+        if (isset($_COOKIE['CookieConsent'])) {
             // The user is not within a region that requires consent - all cookies are accepted
-            if ($_COOKIE["CookieConsent"] === '-1') {
+            if ($_COOKIE['CookieConsent'] === '-1') {
                 return collect([
                     CookieConsent::CONSENT_NECESSARY,
                     CookieConsent::CONSENT_PREFERENCES,
@@ -43,7 +43,7 @@ class CookieBot implements ConsentProvider
                 ]);
             } else {
                 //Read current user consent in encoded JavaScript format
-                $valid_php_json = preg_replace('/\s*:\s*([a-zA-Z0-9_]+?)([}\[,])/', ':"$1"$2', preg_replace('/([{\[,])\s*([a-zA-Z0-9_]+?):/', '$1"$2":', str_replace("'", '"', stripslashes($_COOKIE["CookieConsent"]))));
+                $valid_php_json = preg_replace('/\s*:\s*([a-zA-Z0-9_]+?)([}\[,])/', ':"$1"$2', preg_replace('/([{\[,])\s*([a-zA-Z0-9_]+?):/', '$1"$2":', str_replace("'", '"', stripslashes($_COOKIE['CookieConsent']))));
                 $CookieConsent = json_decode($valid_php_json);
 
                 $consentFor = collect(self::CONSENT_NECESSARY);
