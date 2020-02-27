@@ -43,28 +43,32 @@ class CookieBot implements ConsentProvider
                 ]);
             } else {
                 //Read current user consent in encoded JavaScript format
-                $valid_php_json = preg_replace('/\s*:\s*([a-zA-Z0-9_]+?)([}\[,])/', ':"$1"$2', preg_replace('/([{\[,])\s*([a-zA-Z0-9_]+?):/', '$1"$2":', str_replace("'", '"', stripslashes($_COOKIE['CookieConsent']))));
-                $CookieConsent = json_decode($valid_php_json);
+                $phpJson = preg_replace('/\s*:\s*([a-zA-Z0-9_]+?)([}\[,])/', ':"$1"$2', preg_replace('/([{\[,])\s*([a-zA-Z0-9_]+?):/', '$1"$2":', str_replace("'", '"', stripslashes($_COOKIE['CookieConsent']))));
+                $cookieConsent = json_decode($phpJson);
 
-                $consentFor = collect(self::CONSENT_NECESSARY);
+                $consentFor = collect();
 
-                if (filter_var($CookieConsent->preferences, FILTER_VALIDATE_BOOLEAN)) {
-                    $consentFor->push(self::CONSENT_PREFERENCES);
+                if (filter_var($cookieConsent->necessary, FILTER_VALIDATE_BOOLEAN)) {
+                    $consentFor->push(CookieConsent::CONSENT_NECESSARY);
                 }
 
-                if (filter_var($CookieConsent->statistics, FILTER_VALIDATE_BOOLEAN)) {
-                    $consentFor->push(self::CONSENT_STATISTICS);
+                if (filter_var($cookieConsent->preferences, FILTER_VALIDATE_BOOLEAN)) {
+                    $consentFor->push(CookieConsent::CONSENT_PREFERENCES);
                 }
 
-                if (filter_var($CookieConsent->marketing, FILTER_VALIDATE_BOOLEAN)) {
-                    $consentFor->push(self::CONSENT_MARKETING);
+                if (filter_var($cookieConsent->statistics, FILTER_VALIDATE_BOOLEAN)) {
+                    $consentFor->push(CookieConsent::CONSENT_STATISTICS);
+                }
+
+                if (filter_var($cookieConsent->marketing, FILTER_VALIDATE_BOOLEAN)) {
+                    $consentFor->push(CookieConsent::CONSENT_MARKETING);
                 }
 
                 return $consentFor;
             }
         } else {
             //The user has not accepted cookies - set strictly necessary cookies only
-            return collect(self::CONSENT_NECESSARY);
+            return collect(CookieConsent::CONSENT_NECESSARY);
         }
     }
 }
