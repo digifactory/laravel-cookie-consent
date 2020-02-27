@@ -3,6 +3,7 @@
 namespace DigiFactory\CookieConsent;
 
 use DigiFactory\CookieConsent\Contracts\ConsentProvider;
+use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
@@ -43,9 +44,11 @@ class CookieConsentServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'cookie-consent');
 
-        $config = $this->app->config['cookie-consent'];
+        if ($this->app instanceof Application) {
+            $config = $this->app->config['cookie-consent'];
 
-        $this->app->singleton(ConsentProvider::class, $config['provider']);
-        $this->app->bind('cookie-consent', CookieConsent::class);
+            $this->app->singleton(ConsentProvider::class, $config['provider']);
+            $this->app->bind('cookie-consent', CookieConsent::class);
+        }
     }
 }
