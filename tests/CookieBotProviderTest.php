@@ -3,7 +3,6 @@
 namespace DigiFactory\CookieConsent\Tests;
 
 use DigiFactory\CookieConsent\CookieConsentServiceProvider;
-use DigiFactory\CookieConsent\Providers\CookieBot;
 use Illuminate\Support\Facades\View;
 use Orchestra\Testbench\TestCase;
 use Spatie\Snapshots\MatchesSnapshots;
