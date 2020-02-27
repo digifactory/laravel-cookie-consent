@@ -45,10 +45,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Digifactory\\LaravelCookieConsent\\LaravelCookieConsentServiceProvider"
+                "DigiFactory\\CookieConsent\\CookieConsentServiceProvider"
             ],
             "aliases": {
-                "LaravelCookieConsent": "Digifactory\\LaravelCookieConsent\\LaravelCookieConsentFacade"
+                "LaravelCookieConsent": "DigiFactory\\CookieConsent\\Facades\\CookieConsent"
             }
         }
     }

@@ -6,7 +6,7 @@ use DigiFactory\CookieConsent\Contracts\ConsentProvider;
 use DigiFactory\CookieConsent\CookieConsent;
 use Illuminate\Support\Collection;
 
-class CookieBot implements ConsentProvider
+class Cookiebot implements ConsentProvider
 {
     public function forNecessary(): bool
     {
