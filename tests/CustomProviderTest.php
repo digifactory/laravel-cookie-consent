@@ -4,7 +4,6 @@ namespace DigiFactory\CookieConsent\Tests;
 
 use DigiFactory\CookieConsent\Contracts\ConsentProvider;
 use DigiFactory\CookieConsent\CookieConsentServiceProvider;
-use DigiFactory\CookieConsent\Providers\CookieBot;
 use DigiFactory\CookieConsent\Tests\Providers\AllowAll;
 use DigiFactory\CookieConsent\Tests\Providers\DenyAll;
 use Illuminate\Support\Facades\View;
