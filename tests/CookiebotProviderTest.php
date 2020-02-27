@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\View;
 use Orchestra\Testbench\TestCase;
 use Spatie\Snapshots\MatchesSnapshots;
 
-class CookieBotProviderTest extends TestCase
+class CookiebotProviderTest extends TestCase
 {
     use MatchesSnapshots;
 
