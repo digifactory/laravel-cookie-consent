@@ -31,12 +31,12 @@ class CookieBotProviderTest extends TestCase
 
         $this->assertMatchesSnapshot($view);
 
-        $cookieBotProvider = new CookieBot();
+        $cookieConsent = app('cookie-consent');
 
-        $this->assertTrue($cookieBotProvider->forNecessary());
-        $this->assertFalse($cookieBotProvider->forPreferences());
-        $this->assertFalse($cookieBotProvider->forStatistics());
-        $this->assertFalse($cookieBotProvider->forMarketing());
+        $this->assertTrue($cookieConsent->forNecessary());
+        $this->assertFalse($cookieConsent->forPreferences());
+        $this->assertFalse($cookieConsent->forStatistics());
+        $this->assertFalse($cookieConsent->forMarketing());
     }
 
     /** @test */
@@ -48,12 +48,12 @@ class CookieBotProviderTest extends TestCase
 
         $this->assertMatchesSnapshot($view);
 
-        $cookieBotProvider = new CookieBot();
+        $cookieConsent = app('cookie-consent');
 
-        $this->assertFalse($cookieBotProvider->forNecessary());
-        $this->assertFalse($cookieBotProvider->forPreferences());
-        $this->assertFalse($cookieBotProvider->forStatistics());
-        $this->assertFalse($cookieBotProvider->forMarketing());
+        $this->assertFalse($cookieConsent->forNecessary());
+        $this->assertFalse($cookieConsent->forPreferences());
+        $this->assertFalse($cookieConsent->forStatistics());
+        $this->assertFalse($cookieConsent->forMarketing());
     }
 
     /** @test */
@@ -65,12 +65,12 @@ class CookieBotProviderTest extends TestCase
 
         $this->assertMatchesSnapshot($view);
 
-        $cookieBotProvider = new CookieBot();
+        $cookieConsent = app('cookie-consent');
 
-        $this->assertTrue($cookieBotProvider->forNecessary());
-        $this->assertTrue($cookieBotProvider->forPreferences());
-        $this->assertFalse($cookieBotProvider->forStatistics());
-        $this->assertFalse($cookieBotProvider->forMarketing());
+        $this->assertTrue($cookieConsent->forNecessary());
+        $this->assertTrue($cookieConsent->forPreferences());
+        $this->assertFalse($cookieConsent->forStatistics());
+        $this->assertFalse($cookieConsent->forMarketing());
     }
 
     /** @test */
@@ -82,12 +82,12 @@ class CookieBotProviderTest extends TestCase
 
         $this->assertMatchesSnapshot($view);
 
-        $cookieBotProvider = new CookieBot();
+        $cookieConsent = app('cookie-consent');
 
-        $this->assertTrue($cookieBotProvider->forNecessary());
-        $this->assertFalse($cookieBotProvider->forPreferences());
-        $this->assertTrue($cookieBotProvider->forStatistics());
-        $this->assertFalse($cookieBotProvider->forMarketing());
+        $this->assertTrue($cookieConsent->forNecessary());
+        $this->assertFalse($cookieConsent->forPreferences());
+        $this->assertTrue($cookieConsent->forStatistics());
+        $this->assertFalse($cookieConsent->forMarketing());
     }
 
     /** @test */
@@ -99,11 +99,11 @@ class CookieBotProviderTest extends TestCase
 
         $this->assertMatchesSnapshot($view);
 
-        $cookieBotProvider = new CookieBot();
+        $cookieConsent = app('cookie-consent');
 
-        $this->assertTrue($cookieBotProvider->forNecessary());
-        $this->assertFalse($cookieBotProvider->forPreferences());
-        $this->assertFalse($cookieBotProvider->forStatistics());
-        $this->assertTrue($cookieBotProvider->forMarketing());
+        $this->assertTrue($cookieConsent->forNecessary());
+        $this->assertFalse($cookieConsent->forPreferences());
+        $this->assertFalse($cookieConsent->forStatistics());
+        $this->assertTrue($cookieConsent->forMarketing());
     }
 }

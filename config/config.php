@@ -5,7 +5,7 @@ return [
      * If set to false, the CookieConsent class will always return
      * true. You can leave your Blade directives in your views.
      */
-    'enabled' => env('COOKIE_CONSENT_ENABLED', false),
+    'enabled' => env('COOKIE_CONSENT_ENABLED', true),
 
     /**
      * By default this package uses CookieBot to determine if certain

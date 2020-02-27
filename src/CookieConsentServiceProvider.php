@@ -15,19 +15,19 @@ class CookieConsentServiceProvider extends ServiceProvider
     public function boot()
     {
         Blade::if('cookieConsentNecessary', function () {
-            return app(ConsentProvider::class)->forNecessary();
+            return app('cookie-consent')->forNecessary();
         });
 
         Blade::if('cookieConsentPreferences', function () {
-            return app(ConsentProvider::class)->forPreferences();
+            return app('cookie-consent')->forPreferences();
         });
 
         Blade::if('cookieConsentStatistics', function () {
-            return app(ConsentProvider::class)->forStatistics();
+            return app('cookie-consent')->forStatistics();
         });
 
         Blade::if('cookieConsentMarketing', function () {
-            return app(ConsentProvider::class)->forMarketing();
+            return app('cookie-consent')->forMarketing();
         });
 
         if ($this->app->runningInConsole()) {
