@@ -4,7 +4,6 @@ namespace DigiFactory\CookieConsent\Tests;
 
 use DigiFactory\CookieConsent\CookieConsentServiceProvider;
 use Illuminate\Support\Facades\Blade;
-use Illuminate\Support\Facades\View;
 use Orchestra\Testbench\TestCase;
 
 class BladeRegistrationTest extends TestCase
@@ -13,7 +12,7 @@ class BladeRegistrationTest extends TestCase
     {
         return [CookieConsentServiceProvider::class];
     }
-    
+
     /**
      * @test
      * @dataProvider registeredBladeDirectives
