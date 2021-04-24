@@ -41,7 +41,7 @@ class CookiebotProviderTest extends TestCase
     /** @test */
     public function it_does_not_allow_empty_cookies()
     {
-        $_COOKIE['CookieConsent'] = "";
+        $_COOKIE['CookieConsent'] = '';
 
         $view = view('consent-test')->render();
 
@@ -58,7 +58,7 @@ class CookiebotProviderTest extends TestCase
     /** @test */
     public function it_does_not_allow_non_object_cookies()
     {
-        $_COOKIE['CookieConsent'] = "0";
+        $_COOKIE['CookieConsent'] = '0';
 
         $view = view('consent-test')->render();
 
