@@ -13,6 +13,16 @@
             "name": "Mark Jansen",
             "email": "mark@digifactory.nl",
             "role": "Developer"
+        },
+        {
+            "name": "Maurice Bosch",
+            "email": "maurice@digifactory.nl",
+            "role": "Developer"
+        },
+        {
+            "name": "Roel Pennings",
+            "email": "roel@digifactory.nl",
+            "role": "Developer"
         }
     ],
     "require": {
