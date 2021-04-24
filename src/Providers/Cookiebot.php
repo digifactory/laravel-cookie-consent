@@ -48,20 +48,22 @@ class Cookiebot implements ConsentProvider
 
                 $consentFor = collect();
 
-                if (filter_var($cookieConsent->necessary, FILTER_VALIDATE_BOOLEAN)) {
-                    $consentFor->push(CookieConsent::CONSENT_NECESSARY);
-                }
+                if (is_object($cookieConsent)) {
+                    if (filter_var($cookieConsent->necessary, FILTER_VALIDATE_BOOLEAN)) {
+                        $consentFor->push(CookieConsent::CONSENT_NECESSARY);
+                    }
 
-                if (filter_var($cookieConsent->preferences, FILTER_VALIDATE_BOOLEAN)) {
-                    $consentFor->push(CookieConsent::CONSENT_PREFERENCES);
-                }
+                    if (filter_var($cookieConsent->preferences, FILTER_VALIDATE_BOOLEAN)) {
+                        $consentFor->push(CookieConsent::CONSENT_PREFERENCES);
+                    }
 
-                if (filter_var($cookieConsent->statistics, FILTER_VALIDATE_BOOLEAN)) {
-                    $consentFor->push(CookieConsent::CONSENT_STATISTICS);
-                }
+                    if (filter_var($cookieConsent->statistics, FILTER_VALIDATE_BOOLEAN)) {
+                        $consentFor->push(CookieConsent::CONSENT_STATISTICS);
+                    }
 
-                if (filter_var($cookieConsent->marketing, FILTER_VALIDATE_BOOLEAN)) {
-                    $consentFor->push(CookieConsent::CONSENT_MARKETING);
+                    if (filter_var($cookieConsent->marketing, FILTER_VALIDATE_BOOLEAN)) {
+                        $consentFor->push(CookieConsent::CONSENT_MARKETING);
+                    }
                 }
 
                 return $consentFor;

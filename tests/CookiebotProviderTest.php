@@ -39,6 +39,40 @@ class CookiebotProviderTest extends TestCase
     }
 
     /** @test */
+    public function it_does_not_allow_empty_cookies()
+    {
+        $_COOKIE['CookieConsent'] = "";
+
+        $view = view('consent-test')->render();
+
+        $this->assertMatchesSnapshot($view);
+
+        $cookieConsent = app('cookie-consent');
+
+        $this->assertFalse($cookieConsent->forNecessary());
+        $this->assertFalse($cookieConsent->forPreferences());
+        $this->assertFalse($cookieConsent->forStatistics());
+        $this->assertFalse($cookieConsent->forMarketing());
+    }
+
+    /** @test */
+    public function it_does_not_allow_non_object_cookies()
+    {
+        $_COOKIE['CookieConsent'] = "0";
+
+        $view = view('consent-test')->render();
+
+        $this->assertMatchesSnapshot($view);
+
+        $cookieConsent = app('cookie-consent');
+
+        $this->assertFalse($cookieConsent->forNecessary());
+        $this->assertFalse($cookieConsent->forPreferences());
+        $this->assertFalse($cookieConsent->forStatistics());
+        $this->assertFalse($cookieConsent->forMarketing());
+    }
+
+    /** @test */
     public function it_does_not_allow_cookies()
     {
         $_COOKIE['CookieConsent'] = "{stamp:'digifactory/laravel-cookie-consent',necessary:false,preferences:false,statistics:false,marketing:false,ver:3,utc:1582284206975}";
@@ -50,6 +84,23 @@ class CookiebotProviderTest extends TestCase
         $cookieConsent = app('cookie-consent');
 
         $this->assertFalse($cookieConsent->forNecessary());
+        $this->assertFalse($cookieConsent->forPreferences());
+        $this->assertFalse($cookieConsent->forStatistics());
+        $this->assertFalse($cookieConsent->forMarketing());
+    }
+
+    /** @test */
+    public function it_allows_necessary_cookies()
+    {
+        $_COOKIE['CookieConsent'] = "{stamp:'digifactory/laravel-cookie-consent',necessary:true,preferences:false,statistics:false,marketing:false,ver:3,utc:1582284206975}";
+
+        $view = view('consent-test')->render();
+
+        $this->assertMatchesSnapshot($view);
+
+        $cookieConsent = app('cookie-consent');
+
+        $this->assertTrue($cookieConsent->forNecessary());
         $this->assertFalse($cookieConsent->forPreferences());
         $this->assertFalse($cookieConsent->forStatistics());
         $this->assertFalse($cookieConsent->forMarketing());
