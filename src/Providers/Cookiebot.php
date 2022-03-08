@@ -68,7 +68,6 @@ class Cookiebot implements ConsentProvider
 
                 return $consentFor;
             }
-
         } else {
             //The user has not accepted cookies - set strictly necessary cookies only
             return collect(CookieConsent::CONSENT_NECESSARY);
