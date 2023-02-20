@@ -24,7 +24,7 @@ class BladeRegistrationTest extends TestCase
         $this->assertTrue($directives->contains($directive));
     }
 
-    public function registeredBladeDirectives()
+    public static function registeredBladeDirectives()
     {
         return [
             ['cookieConsentNecessary'],

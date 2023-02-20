@@ -31,8 +31,8 @@
     },
     "require-dev": {
         "orchestra/testbench": "^8.0",
-        "phpunit/phpunit": "^9.3",
-        "spatie/phpunit-snapshot-assertions": "^4.0"
+        "phpunit/phpunit": "^10.0",
+        "spatie/phpunit-snapshot-assertions": "^5.0"
     },
     "autoload": {
         "psr-4": {
