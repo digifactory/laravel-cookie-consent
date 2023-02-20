@@ -1,6 +1,9 @@
 # Changelog
 
 All notable changes to `laravel-cookie-consent` will be documented in this file.
+## 3.0.0 - 2023-02-20
+- Support for Laravel 10 and PHP 8.2
+- Dropped support for Laravel 9, PHP 8.0 and PHP 8.1
 
 ## 2.0.0 - 2022-02-23
 - Support for Laravel 9 and PHP 8.1
