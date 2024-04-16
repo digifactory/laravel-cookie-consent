@@ -15,6 +15,7 @@ class BladeRegistrationTest extends TestCase
 
     /**
      * @test
+     *
      * @dataProvider registeredBladeDirectives
      */
     public function it_registers_blade_directives($directive)
