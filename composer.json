@@ -27,11 +27,11 @@
     ],
     "require": {
         "php": "^8.2",
-        "illuminate/support": "^11.0"
+        "illuminate/support": "^12.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^9.0",
-        "phpunit/phpunit": "^10.5",
+        "orchestra/testbench": "^10.0",
+        "phpunit/phpunit": "^12",
         "spatie/phpunit-snapshot-assertions": "^5.0"
     },
     "autoload": {
