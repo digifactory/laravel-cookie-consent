@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/digifactory/laravel-cookie-consent.svg?style=flat-square)](https://packagist.org/packages/digifactory/laravel-cookie-consent)
 [![MIT Licensed](https://img.shields.io/github/license/digifactory/laravel-cookie-consent?style=flat-square)](LICENSE.md)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/digifactory/laravel-cookie-consent/run-php-tests/master)
+[![run-tests](https://github.com/digifactory/laravel-cookie-consent/actions/workflows/run-php-tests.yml/badge.svg)](https://github.com/digifactory/laravel-cookie-consent/actions/workflows/run-php-tests.yml)
 [![Quality Score](https://img.shields.io/scrutinizer/g/digifactory/laravel-cookie-consent.svg?style=flat-square)](https://scrutinizer-ci.com/g/digifactory/laravel-cookie-consent)
 [![StyleCI](https://styleci.io/repos/243287364/shield?branch=master)](https://styleci.io/repos/243287364)
 [![Total Downloads](https://img.shields.io/packagist/dt/digifactory/laravel-cookie-consent.svg?style=flat-square)](https://packagist.org/packages/digifactory/laravel-cookie-consent)
