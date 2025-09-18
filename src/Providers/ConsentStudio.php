@@ -30,10 +30,10 @@ class ConsentStudio implements ConsentProvider
     private function consentGiven(): Collection
     {
         if (isset($_COOKIE['consent-studio__storage'])) {
-            return $this->getConsentFor($_COOKIE['consent-studio__storage']);
+            return $this->getConsentFor(json_decode($_COOKIE['consent-studio__storage']));
         } else {
             //The user has not accepted cookies - set strictly necessary cookies only
-            return collect('functional');
+            return collect('neutral');
         }
     }
 
