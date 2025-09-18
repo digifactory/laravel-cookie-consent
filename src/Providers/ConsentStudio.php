@@ -3,7 +3,6 @@
 namespace DigiFactory\CookieConsent\Providers;
 
 use DigiFactory\CookieConsent\Contracts\ConsentProvider;
-use DigiFactory\CookieConsent\CookieConsent;
 use Illuminate\Support\Collection;
 
 class ConsentStudio implements ConsentProvider
@@ -43,19 +42,19 @@ class ConsentStudio implements ConsentProvider
         $consentFor = collect();
 
         if (is_array($cookieConsent)) {
-            if(in_array('neutral', $cookieConsent)) {
+            if (in_array('neutral', $cookieConsent)) {
                 $consentFor->push('neutral');
             }
 
-            if(in_array('functional', $cookieConsent)) {
+            if (in_array('functional', $cookieConsent)) {
                 $consentFor->push('functional');
             }
 
-            if(in_array('analytics', $cookieConsent)) {
+            if (in_array('analytics', $cookieConsent)) {
                 $consentFor->push('analytics');
             }
 
-            if(in_array('marketing', $cookieConsent)) {
+            if (in_array('marketing', $cookieConsent)) {
                 $consentFor->push('marketing');
             }
         }
