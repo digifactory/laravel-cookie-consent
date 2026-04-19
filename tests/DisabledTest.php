@@ -25,8 +25,7 @@ class DisabledTest extends TestCase
         return [CookieConsentServiceProvider::class];
     }
 
-    /** @test */
-    public function it_allows_all_cookies_if_disabled()
+    public function test_it_allows_all_cookies_if_disabled()
     {
         $this->app->singleton(ConsentProvider::class, DenyAll::class);
 
