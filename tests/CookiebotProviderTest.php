@@ -23,8 +23,7 @@ class CookiebotProviderTest extends TestCase
         return [CookieConsentServiceProvider::class];
     }
 
-    /** @test */
-    public function it_allows_necessary_cookies_without_cookie()
+    public function test_it_allows_necessary_cookies_without_cookie()
     {
         $view = view('consent-test')->render();
 
@@ -38,8 +37,7 @@ class CookiebotProviderTest extends TestCase
         $this->assertFalse($cookieConsent->forMarketing());
     }
 
-    /** @test */
-    public function it_does_not_allow_empty_cookies()
+    public function test_it_does_not_allow_empty_cookies()
     {
         $_COOKIE['CookieConsent'] = '';
 
@@ -55,8 +53,7 @@ class CookiebotProviderTest extends TestCase
         $this->assertFalse($cookieConsent->forMarketing());
     }
 
-    /** @test */
-    public function it_does_not_allow_non_object_cookies()
+    public function test_it_does_not_allow_non_object_cookies()
     {
         $_COOKIE['CookieConsent'] = '0';
 
@@ -72,8 +69,7 @@ class CookiebotProviderTest extends TestCase
         $this->assertFalse($cookieConsent->forMarketing());
     }
 
-    /** @test */
-    public function it_does_not_allow_cookies()
+    public function test_it_does_not_allow_cookies()
     {
         $_COOKIE['CookieConsent'] = "{stamp:'digifactory/laravel-cookie-consent',necessary:false,preferences:false,statistics:false,marketing:false,ver:3,utc:1582284206975}";
 
@@ -89,8 +85,7 @@ class CookiebotProviderTest extends TestCase
         $this->assertFalse($cookieConsent->forMarketing());
     }
 
-    /** @test */
-    public function it_allows_necessary_cookies()
+    public function test_it_allows_necessary_cookies()
     {
         $_COOKIE['CookieConsent'] = "{stamp:'digifactory/laravel-cookie-consent',necessary:true,preferences:false,statistics:false,marketing:false,ver:3,utc:1582284206975}";
 
@@ -106,8 +101,7 @@ class CookiebotProviderTest extends TestCase
         $this->assertFalse($cookieConsent->forMarketing());
     }
 
-    /** @test */
-    public function it_allows_preference_cookies()
+    public function test_it_allows_preference_cookies()
     {
         $_COOKIE['CookieConsent'] = "{stamp:'digifactory/laravel-cookie-consent',necessary:true,preferences:true,statistics:false,marketing:false,ver:3,utc:1582284206975}";
 
@@ -123,8 +117,7 @@ class CookiebotProviderTest extends TestCase
         $this->assertFalse($cookieConsent->forMarketing());
     }
 
-    /** @test */
-    public function it_allows_statistics_cookies()
+    public function test_it_allows_statistics_cookies()
     {
         $_COOKIE['CookieConsent'] = "{stamp:'digifactory/laravel-cookie-consent',necessary:true,preferences:false,statistics:true,marketing:false,ver:3,utc:1582284206975}";
 
@@ -140,8 +133,7 @@ class CookiebotProviderTest extends TestCase
         $this->assertFalse($cookieConsent->forMarketing());
     }
 
-    /** @test */
-    public function it_allows_marketing_cookies()
+    public function test_it_allows_marketing_cookies()
     {
         $_COOKIE['CookieConsent'] = "{stamp:'digifactory/laravel-cookie-consent',necessary:true,preferences:false,statistics:false,marketing:true,ver:3,utc:1582284206975}";
 

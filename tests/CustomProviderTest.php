@@ -26,8 +26,7 @@ class CustomProviderTest extends TestCase
         return [CookieConsentServiceProvider::class];
     }
 
-    /** @test */
-    public function it_allows_all_cookies()
+    public function test_it_allows_all_cookies()
     {
         $this->app->singleton(ConsentProvider::class, AllowAll::class);
 
@@ -43,8 +42,7 @@ class CustomProviderTest extends TestCase
         $this->assertTrue($cookieConsent->forMarketing());
     }
 
-    /** @test */
-    public function it_denies_all_cookies()
+    public function test_it_denies_all_cookies()
     {
         $this->app->singleton(ConsentProvider::class, DenyAll::class);
 

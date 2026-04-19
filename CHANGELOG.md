@@ -1,6 +1,13 @@
 # Changelog
 
 All notable changes to `laravel-cookie-consent` will be documented in this file.
+## 5.0.1 - 2025-04-19
+- patched PHPUnit
+
+## 5.0.0 - 2025-04-08
+- Laravel 13 support
+- Add file for ConsentStudio
+
 ## 4.1.0 - 2025-04-04
 - Support for Laravel 12 and PHP 8.4(@vylink thank you for the PR)
 
